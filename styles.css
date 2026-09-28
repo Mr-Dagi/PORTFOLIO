@@ -1,0 +1,360 @@
+:root {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --bg-tertiary: #1a1a1a;
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --text-tertiary: #71717a;
+  --border-color: #27272a;
+  --accent-orange: #f97316;
+  --accent-blue: #3b82f6;
+  --accent-red: #ef4444;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans Ethiopic", "Nyala", "Abyssinica SIL", sans-serif;
+  --font-display: var(--font-sans);
+}
+
+:root[data-theme="light"] {
+  --bg-primary: #fafafa;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f4f4f5;
+  --text-primary: #0a0a0a;
+  --text-secondary: #52525b;
+  --text-tertiary: #a1a1aa;
+  --border-color: #e4e4e7;
+}
+
+body { transition: background-color .3s, color .3s; }
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+a {
+  color: var(--accent-orange);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+}
+
+.page {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+/* ---------- Header ---------- */
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.header-main h1 {
+  font-size: 2.1rem;
+  font-weight: 800;
+}
+
+.title {
+  color: var(--accent-orange);
+  font-weight: 600;
+  margin: .35rem 0 .2rem;
+  font-size: 1.02rem;
+}
+
+.location {
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: .92rem;
+}
+
+.header-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: .75rem;
+}
+
+.contact-icons {
+  display: flex;
+  gap: .5rem;
+}
+
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+.icon-link:hover {
+  border-color: var(--accent-orange);
+  color: var(--accent-orange);
+  text-decoration: none;
+}
+
+/* ---------- Language + theme controls ---------- */
+.controls { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; justify-content: flex-end; }
+
+.lang-switch { display: inline-flex; gap: .15rem; }
+.lang-btn {
+  font: inherit;
+  font-size: .78rem;
+  font-weight: 600;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-tertiary);
+  padding: .2rem .4rem;
+  cursor: pointer;
+}
+.lang-btn:hover { color: var(--text-primary); }
+.lang-btn[aria-pressed="true"] { color: var(--accent-orange); border-bottom-color: var(--accent-orange); }
+
+/* Theme "orb": a small half-lit disc that turns over when the theme flips. */
+.orb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  padding: 0;
+  cursor: pointer;
+  border: 1.5px solid var(--text-tertiary);
+  background: linear-gradient(90deg, var(--accent-orange) 50%, transparent 50%);
+  transition: transform .5s cubic-bezier(.3,.7,.2,1), border-color .2s;
+}
+.orb:hover { border-color: var(--accent-orange); }
+:root[data-theme="light"] .orb { transform: rotate(180deg); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  font: inherit;
+  font-size: .85rem;
+  font-weight: 600;
+  padding: .55rem .9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  background: transparent;
+  color: var(--text-primary);
+}
+.btn-ghost:hover { border-color: var(--accent-orange); color: var(--accent-orange); }
+.btn-primary {
+  background: var(--accent-orange);
+  border-color: var(--accent-orange);
+  color: #0a0a0a;
+}
+.btn-primary:hover { filter: brightness(1.08); }
+.btn-small { font-size: .78rem; padding: .4rem .7rem; }
+.file-label { display: inline-flex; }
+
+/* ---------- Cards / layout ---------- */
+.card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 1.5rem;
+  padding: 1.5rem 1.6rem;
+  margin-bottom: 1.25rem;
+}
+
+.card h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.summary {
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: .98rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+@media (max-width: 720px) {
+  .grid { grid-template-columns: 1fr; }
+  .header { flex-direction: column; }
+  .header-actions { align-items: flex-start; }
+}
+
+.stack { display: flex; flex-direction: column; gap: 1.1rem; }
+
+.entry-title { font-weight: 700; font-size: .98rem; }
+.entry-sub {
+  color: var(--text-secondary);
+  font-size: .85rem;
+  margin: .1rem 0 .5rem;
+}
+.entry ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--text-secondary);
+  font-size: .9rem;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+}
+
+.tags { display: flex; flex-wrap: wrap; gap: .45rem; }
+.tag {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: .8rem;
+  padding: .35rem .7rem;
+  border-radius: 999px;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-tertiary);
+  font-size: .8rem;
+  padding-top: 1rem;
+}
+
+.admin-link {
+  background: none;
+  border: none;
+  color: var(--text-tertiary);
+  font-size: .78rem;
+  cursor: pointer;
+  padding: .25rem .5rem;
+}
+.admin-link:hover { color: var(--accent-orange); }
+
+/* ---------- Admin dialog ---------- */
+.dialog {
+  border: 1px solid var(--border-color);
+  border-radius: 1.25rem;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: 0;
+  width: min(560px, 92vw);
+  max-height: 88vh;
+}
+.dialog::backdrop { background: rgba(0,0,0,.65); }
+
+.dialog-inner { padding: 1.5rem; display: flex; flex-direction: column; max-height: 88vh; }
+
+.dialog-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .75rem;
+}
+
+.edit-scroll {
+  overflow-y: auto;
+  padding-right: .25rem;
+  flex: 1;
+}
+
+.field { display: flex; flex-direction: column; gap: .3rem; margin-bottom: .8rem; font-size: .85rem; }
+.field span { color: var(--text-secondary); font-weight: 600; }
+.field input, .field textarea, .field-group > input[type="text"] {
+  font: inherit;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: .6rem;
+  padding: .55rem .7rem;
+  color: var(--text-primary);
+  width: 100%;
+}
+.field textarea { resize: vertical; }
+
+.field-group {
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 0 0 1rem;
+}
+.field-group legend {
+  padding: 0 .4rem;
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--accent-orange);
+}
+.field-group > input[type="text"] { margin-top: .3rem; }
+
+.edit-repeat-list { display: flex; flex-direction: column; gap: .75rem; margin-bottom: .75rem; }
+.repeat-item {
+  border: 1px solid var(--border-color);
+  border-radius: .8rem;
+  padding: .8rem;
+  background: var(--bg-primary);
+}
+.repeat-item-head {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: .3rem;
+}
+.remove-btn {
+  background: none;
+  border: none;
+  color: var(--accent-red);
+  cursor: pointer;
+  font-size: .78rem;
+}
+
+.hint { color: var(--text-secondary); font-size: .85rem; margin: -.4rem 0 .8rem; }
+.error { color: var(--accent-red); font-size: .82rem; min-height: 1.1em; margin: .3rem 0; }
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: .6rem;
+  padding-top: .75rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: .5rem;
+}
+
+/* ---------- Print ---------- */
+@media print {
+  :root[data-theme] { --text-primary:#000; --text-secondary:#333; }
+  body { background: #fff; color: #000; }
+  .card { background: #fff; border-color: #ddd; break-inside: avoid; }
+  .tag { background: #f3f3f3; border-color: #ddd; color: #333; }
+  .print-btn, .admin-link, .footer, .controls { display: none !important; }
+  .page { max-width: 100%; padding: 0; }
+  a { color: #000; text-decoration: underline; }
+}

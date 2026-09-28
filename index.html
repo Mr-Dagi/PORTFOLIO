@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dagmawi Alemayhu — Full-Stack Developer &amp; AI/IT Specialist</title>
+<meta name="description" content="CV of Dagmawi Alemayhu, Full-Stack Developer, AI & IT Specialist and Computer Scientist based in Addis Ababa, Ethiopia." />
+<meta name="robots" content="index, follow" />
+
+<!-- Strict Content-Security-Policy: no external scripts/styles/fonts, no inline
+     script execution, no framing by other sites. Everything the page needs
+     ships in this same folder — nothing is fetched from anywhere else. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none';" />
+<meta http-equiv="X-Content-Type-Options" content="nosniff" />
+<meta name="referrer" content="no-referrer" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0a0a'/%3E%3Ctext x='50' y='68' font-size='60' font-family='sans-serif' font-weight='700' fill='%23f97316' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E" />
+<script src="theme-init.js"></script>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ===== Header ===== -->
+  <header class="header">
+    <div class="header-main">
+      <h1 id="name">Dagmawi Alemayhu</h1>
+      <p class="title" id="jobTitle">Full-Stack Developer · AI &amp; IT Specialist · Computer Scientist &amp; Engineer</p>
+      <p class="location" id="location">Addis Ababa, Ethiopia</p>
+    </div>
+    <div class="header-actions">
+      <nav class="contact-icons" id="contactIcons" aria-label="Contact links"></nav>
+      <div class="controls">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" class="lang-btn" data-lang="en" lang="en">EN</button>
+          <button type="button" class="lang-btn" data-lang="am" lang="am">አማ</button>
+          <button type="button" class="lang-btn" data-lang="om" lang="om">OM</button>
+        </div>
+        <button type="button" class="orb" id="themeOrb" aria-label="Change colour theme"></button>
+        <button type="button" class="btn btn-ghost print-btn" id="printBtn">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M6 9V2h12v7h-2V4H8v5H6zm14 2a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-3v3H7v-3H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16zM8 15v5h8v-5H8zm10-3.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg>
+          <span data-i18n="print">Print / Save PDF</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Summary ===== -->
+  <section class="card" aria-labelledby="summaryHeading">
+    <h2 id="summaryHeading" class="visually-hidden" data-i18n="summary">Summary</h2>
+    <p id="summary" class="summary"></p>
+  </section>
+
+  <div class="grid">
+    <!-- ===== Main column ===== -->
+    <div class="col-main">
+      <section class="card" aria-labelledby="experienceHeading">
+        <h2 id="experienceHeading" data-i18n="experience">Experience</h2>
+        <div id="experienceList" class="stack"></div>
+      </section>
+
+      <section class="card" aria-labelledby="projectsHeading">
+        <h2 id="projectsHeading" data-i18n="projects">Projects &amp; Ventures</h2>
+        <div id="projectsList" class="stack"></div>
+      </section>
+    </div>
+
+    <!-- ===== Side column ===== -->
+    <div class="col-side">
+      <section class="card" aria-labelledby="skillsHeading">
+        <h2 id="skillsHeading" data-i18n="skills">Skills</h2>
+        <div id="skillsList" class="tags"></div>
+      </section>
+
+      <section class="card" aria-labelledby="educationHeading">
+        <h2 id="educationHeading" data-i18n="education">Education</h2>
+        <div id="educationList" class="stack"></div>
+      </section>
+
+      <section class="card" aria-labelledby="languagesHeading">
+        <h2 id="languagesHeading" data-i18n="languages">Languages</h2>
+        <div id="languagesList" class="tags"></div>
+      </section>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> <span id="footerName">Dagmawi Alemayhu</span>. <span data-i18n="rights">All rights reserved.</span></p>
+    <button type="button" class="admin-link" id="adminOpenBtn" aria-haspopup="dialog" data-i18n="admin">Admin</button>
+  </footer>
+</div>
+
+<!-- ===== Admin dialog ===== -->
+<dialog id="adminDialog" class="dialog">
+  <form method="dialog" class="dialog-inner" id="adminForm">
+    <div id="adminAuthView">
+      <h2 id="adminAuthTitle">Admin sign-in</h2>
+      <label class="field">
+        <span>Username</span>
+        <input type="text" id="adminUsernameInput" autocomplete="username" required />
+      </label>
+      <label class="field">
+        <span>Password</span>
+        <input type="password" id="adminPasswordInput" autocomplete="current-password" required />
+      </label>
+      <p class="error" id="adminAuthError" role="alert"></p>
+      <div class="dialog-actions">
+        <button type="button" class="btn btn-ghost" id="adminCancelBtn">Cancel</button>
+        <button type="button" class="btn btn-primary" id="adminSubmitBtn">Sign in</button>
+      </div>
+    </div>
+
+    <div id="adminEditView" hidden>
+      <div class="dialog-header-row">
+        <h2>Edit CV content</h2>
+        <span class="hint" id="editLangNote"></span>
+        <button type="button" class="btn btn-ghost btn-small" id="adminLogoutBtn">Log out</button>
+      </div>
+
+      <div class="edit-scroll">
+        <fieldset class="field-group">
+          <legend>Header</legend>
+          <label class="field"><span>Full name</span><input type="text" id="editName" /></label>
+          <label class="field"><span>Headline / title</span><input type="text" id="editTitle" /></label>
+          <label class="field"><span>Location</span><input type="text" id="editLocation" /></label>
+          <label class="field"><span>Email</span><input type="email" id="editEmail" /></label>
+          <label class="field"><span>GitHub URL</span><input type="url" id="editGithub" /></label>
+          <label class="field"><span>LinkedIn URL</span><input type="url" id="editLinkedin" /></label>
+        </fieldset>
+
+        <fieldset class="field-group">
+          <legend>Summary</legend>
+          <label class="field"><span>Summary paragraph</span><textarea id="editSummary" rows="3"></textarea></label>
+        </fieldset>
+
+        <fieldset class="field-group">
+          <legend>Experience</legend>
+          <div id="editExperienceList" class="edit-repeat-list"></div>
+          <button type="button" class="btn btn-ghost btn-small" id="addExperienceBtn">+ Add experience</button>
+        </fieldset>
+
+        <fieldset class="field-group">
+          <legend>Education</legend>
+          <div id="editEducationList" class="edit-repeat-list"></div>
+          <button type="button" class="btn btn-ghost btn-small" id="addEducationBtn">+ Add education</button>
+        </fieldset>
+
+        <fieldset class="field-group">
+          <legend>Projects &amp; Ventures</legend>
+          <div id="editProjectsList" class="edit-repeat-list"></div>
+          <button type="button" class="btn btn-ghost btn-small" id="addProjectBtn">+ Add project</button>
+        </fieldset>
+
+        <fieldset class="field-group">
+          <legend>Skills (comma separated)</legend>
+          <input type="text" id="editSkills" />
+        </fieldset>
+
+        <fieldset class="field-group">
+          <legend>Languages (comma separated)</legend>
+          <input type="text" id="editLanguages" />
+        </fieldset>
+
+        <fieldset class="field-group">
+          <legend>Change admin password</legend>
+          <label class="field"><span>Current password</span><input type="password" id="editCurrentPassword" autocomplete="current-password" /></label>
+          <label class="field"><span>New password</span><input type="password" id="editNewPassword" autocomplete="new-password" minlength="8" /></label>
+          <button type="button" class="btn btn-ghost btn-small" id="changePasswordBtn">Update password</button>
+          <p class="error" id="passwordChangeMsg" role="status"></p>
+        </fieldset>
+
+        <fieldset class="field-group">
+          <legend>Backup</legend>
+          <div class="dialog-actions" style="justify-content:flex-start;gap:.75rem;flex-wrap:wrap;">
+            <button type="button" class="btn btn-ghost btn-small" id="exportBtn">Export JSON</button>
+            <label class="btn btn-ghost btn-small file-label">Import JSON<input type="file" id="importInput" accept="application/json" hidden /></label>
+            <button type="button" class="btn btn-ghost btn-small" id="resetBtn">Reset to defaults</button>
+          </div>
+        </fieldset>
+      </div>
+
+      <p class="error" id="adminSaveMsg" role="status"></p>
+      <div class="dialog-actions">
+        <button type="button" class="btn btn-ghost" id="adminEditCancelBtn">Close</button>
+        <button type="button" class="btn btn-primary" id="adminSaveBtn">Save changes</button>
+      </div>
+    </div>
+  </form>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>
